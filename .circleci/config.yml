@@ -1,10 +1,13 @@
+  
+ jobs:
+ 
   configure_infrastructure: 
     docker:
       - image: python:3.7-alpine3.11
     steps:
       - checkout
       - add_ssh_keys:
-          fingerprints: ["0c:55:f7:d7:ad:e3:73:19:0b:e6:c6:46:5c:04:76:94"] # You can get this ID in the section where you registered the SSH Key
+          fingerprints: ["49:de:32:95:cc:77:71:6a:a2:82:fd:a3:eb:e2:c4:09"] # You can get this ID in the section where you registered the SSH Key
       - run:
           name: Install dependencies
           command: |
@@ -15,3 +18,10 @@
           command: |
             ansible-playbook -i inventory.txt main4.yml
             
+            
+  workflows:
+   # Name the workflow "welcome"
+   my_workflow:
+     # Run the welcome/run job in its own container
+     jobs:
+      - configure_infrastructure
