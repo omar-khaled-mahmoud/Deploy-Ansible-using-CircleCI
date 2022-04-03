@@ -7,15 +7,6 @@ orbs:
   # welcome: circleci/welcome-orb@0.4.1
   # Orchestrate or schedule a set of jobs
 
-commands:
-  # Exercise: Reusable Job Code
-  print_pipeline_id:
-    parameters:
-      id: 
-        type: string
-    steps:
-      - run: echo << parameters.id >>
-       
 jobs:
   # Exercise: Config and Deployment
   configure_infrastructure: 
