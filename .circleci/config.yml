@@ -1,4 +1,4 @@
+jobs:
 
-rrrr 
-  -dfff 
-    dd
+	configure_infrastructure: 
+		docker:
